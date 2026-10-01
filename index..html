@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memory | اطبع ذكرياتك</title>
+  <meta name="description" content="Memory — طباعة الصور في الجموم بسهولة وإرسال الطلب عبر واتساب.">
+  <meta name="theme-color" content="#f7f2ea">
+  <meta property="og:title" content="Memory | اطبع ذكرياتك">
+  <meta property="og:description" content="اختاري صورك، احسبي السعر، وأرسلي طلبك عبر واتساب.">
+  <meta property="og:type" content="website">
+  <style>
+:root{
+  --cream:#f7f2ea;
+  --paper:#fffdf9;
+  --ink:#26231f;
+  --muted:#777067;
+  --line:#e4ddd2;
+  --accent:#8d7159;
+  --accent-dark:#6f5643;
+  --shadow:0 20px 60px rgba(58,45,32,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.8}
+a{text-decoration:none;color:inherit}
+.topbar{height:78px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(255,253,249,.92);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}
+.logo{font-family:Georgia,serif;font-size:30px;letter-spacing:.5px}
+nav{display:flex;gap:25px;align-items:center;font-size:14px}
+nav a{color:#5e574f}
+nav a:hover{color:var(--ink)}
+.nav-order{padding:8px 18px;border:1px solid var(--ink);border-radius:30px;color:var(--ink)}
+.hero{min-height:calc(100vh - 78px);padding:70px 8%;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;background:var(--cream)}
+.eyebrow{font-size:11px;letter-spacing:2.5px;color:var(--accent);font-weight:700}
+.hero h1{font-family:Georgia,serif;font-size:clamp(48px,6vw,82px);line-height:1.12;font-weight:500;margin:15px 0 20px}
+.hero h1 span{color:var(--accent)}
+.hero p{max-width:510px;color:var(--muted);font-size:17px;margin-bottom:30px}
+.button{display:inline-flex;gap:16px;align-items:center;background:var(--ink);color:white;padding:13px 23px;border-radius:6px;font-weight:600;border:0;cursor:pointer;font-family:inherit;font-size:14px}
+.button:hover{background:var(--accent-dark)}
+.full{width:100%;justify-content:center;margin-top:5px}
+.photo-stack{height:470px;position:relative;max-width:480px;margin:auto;width:100%}
+.photo{position:absolute;background:#ddd center/cover;box-shadow:var(--shadow);display:flex;align-items:flex-end;justify-content:center;color:white;font-family:Georgia,serif;letter-spacing:1px}
+.photo span{margin-bottom:20px;text-shadow:0 2px 10px #333}
+.photo-a{width:260px;height:330px;right:0;top:35px;transform:rotate(6deg);background:linear-gradient(145deg,#9d7f67,#cdb59e 48%,#6d5a4b)}
+.photo-b{width:250px;height:320px;left:20px;top:95px;transform:rotate(-7deg);background:linear-gradient(135deg,#b4a18c,#d8c9b8 48%,#837262)}
+.photo-c{width:210px;height:270px;right:120px;bottom:0;transform:rotate(2deg);background:linear-gradient(145deg,#705c4d,#b9a18a 50%,#8b7561)}
+.section{padding:100px 8%;max-width:1250px;margin:auto}
+.section-heading{margin-bottom:40px}
+.section-heading h2,.story h2,.contact h2{font-family:Georgia,serif;font-weight:500;font-size:46px;line-height:1.25;margin:8px 0}
+.section-heading p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:32px;background:var(--cream);border:1px solid var(--line);border-radius:8px;min-height:250px}
+.card.featured{background:#eee5d9;border-color:#d8c9b8}
+.card-icon{font-family:Georgia,serif;font-size:27px;margin-bottom:28px;color:var(--accent)}
+.card h3{margin:0 0 8px;font-size:19px}
+.card p{color:var(--muted);font-size:14px;min-height:55px}
+.card strong{font-size:14px}
+.story{padding:95px 8%;background:var(--ink);color:white;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.story .eyebrow{color:#c6aa8d}
+.story h2{font-size:48px}
+.story p{color:#d5d0c8;max-width:600px;font-size:17px}
+.order-section{background:#fffdf9}
+.order-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:start}
+.order-form{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:30px;border:1px solid var(--line);border-radius:10px;background:var(--cream)}
+.order-form label{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:600}
+.order-form label:nth-last-of-type(2),.order-form label:last-of-type,.order-form button{grid-column:1/-1}
+input,select,textarea{font-family:inherit;font-size:14px;border:1px solid var(--line);background:white;border-radius:6px;padding:12px 13px;outline:none;color:var(--ink)}
+input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+small{font-weight:400;color:var(--muted)}
+.summary{background:var(--ink);color:white;padding:30px;border-radius:10px;position:sticky;top:100px}
+.summary .eyebrow{color:#c6aa8d}
+.summary h3{font-family:Georgia,serif;font-size:30px;font-weight:500;margin:8px 0 25px}
+.summary-row{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid #4b4640;color:#d7d0c7}
+.summary-row strong{color:white}
+.summary-row.total{border-bottom:0;font-size:16px;padding-top:25px}
+.note{font-size:11px;color:#aaa29a;margin-top:20px}
+.confirmation{margin-top:20px;background:#f0e7dc;color:var(--ink);padding:15px;border-radius:6px;font-size:13px}
+.contact{padding:80px 8%;background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.contact-details{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.contact-details p{font-size:13px;margin:0}
+.contact-details strong{font-size:12px;color:var(--accent)}
+.contact-details span{color:var(--muted)}
+footer{padding:28px 8%;display:flex;justify-content:space-between;color:#8b847c;font-size:11px;border-top:1px solid var(--line)}
+@media(max-width:850px){
+  nav a:not(.nav-order){display:none}
+  .hero,.story,.contact,.order-layout{grid-template-columns:1fr}
+  .hero{padding-top:55px}
+  .photo-stack{height:380px}
+  .cards{grid-template-columns:1fr}
+  .order-form{grid-template-columns:1fr}
+  .order-form label:nth-last-of-type(2),.order-form label:last-of-type,.order-form button{grid-column:auto}
+  .summary{position:static}
+  .contact-details{grid-template-columns:1fr}
+  .section-heading h2,.story h2,.contact h2{font-size:38px}
+  footer{flex-direction:column;gap:8px}
+}
+
+
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.how-card{padding:24px;background:var(--cream);border:1px solid var(--line);border-radius:8px}.how-card b{font-family:Georgia,serif;font-size:28px;color:var(--accent)}.how-card h3{margin:7px 0;font-size:17px}.how-card p{margin:0;color:var(--muted);font-size:13px}
+@media(max-width:850px){.how-grid{grid-template-columns:1fr 1fr}}
+
+.wa-float{position:fixed;left:20px;bottom:20px;z-index:20;background:#25D366;color:#fff;padding:11px 16px;border-radius:30px;font-size:13px;font-weight:700;box-shadow:0 8px 25px rgba(0,0,0,.18)}
+.wa-float:hover{background:#1fa855;color:#fff}
+@media(max-width:850px){.wa-float{left:14px;bottom:14px}}
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#home">Memory</a>
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#products">منتجاتنا</a>
+      <a href="#story">قصتنا</a>
+      <a class="nav-order" href="#order">اطلب الآن</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">MEMORY • PHOTO PRINTING</span>
+        <h1>خلّي ذكرياتك<br><span>تعيش على ورق.</span></h1>
+        <p>اختر صورك، حدّد المقاس والكمية، وارفعها بسهولة. نحن نهتم بطباعة ذكرياتك.</p>
+        <a class="button" href="#order">اطبع صورك الآن <span>←</span></a>
+      </div>
+      <div class="photo-stack" aria-label="نماذج صور مطبوعة">
+        <div class="photo photo-a"><span>memories</span></div>
+        <div class="photo photo-b"><span>little moments</span></div>
+        <div class="photo photo-c"><span>♡</span></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-bottom:40px">
+      <div class="section-heading"><span class="eyebrow">HOW IT WORKS</span><h2>طلبك في 4 خطوات</h2><p>بكل بساطة، من صور جوالك إلى صور مطبوعة في الجموم.</p></div>
+      <div class="how-grid">
+        <div class="how-card"><b>01</b><h3>اختاري صورك</h3><p>حددي الصور التي تريدين طباعتها.</p></div>
+        <div class="how-card"><b>02</b><h3>حددي المقاس والنسخ</h3><p>اختاري المقاس وعدد النسخ لكل صورة.</p></div>
+        <div class="how-card"><b>03</b><h3>راجعي الصور</h3><p>شاهدي معاينة الصور قبل التأكيد.</p></div>
+        <div class="how-card"><b>04</b><h3>أكدي الطلب</h3><p>اختاري الاستلام من المحل أو التوصيل.</p></div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="section-heading">
+        <span class="eyebrow">OUR PRODUCTS</span>
+        <h2>خيارات الطباعة</h2>
+        <p>اختاري المقاس المناسب لصورك، والباقي علينا.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">10×15</div>
+          <h3>صورة كلاسيكية</h3>
+          <p>المقاس الأكثر استخدامًا للصور والذكريات اليومية.</p>
+          <strong>10 ريال للصورة</strong>
+        </article>
+        <article class="card featured">
+          <div class="card-icon">13×18</div>
+          <h3>صورة كبيرة</h3>
+          <p>مناسبة للصور التي تريدين إبراز تفاصيلها أكثر.</p>
+          <strong>15 ريال للصورة</strong>
+        </article>
+        <article class="card">
+          <div class="card-icon">15×20</div>
+          <h3>صورة مميزة</h3>
+          <p>اختيار جميل للصور التي تستحق مساحة أكبر.</p>
+          <strong>20 ريال للصورة</strong>
+        </article>
+      </div>
+    </section>
+
+    <section id="story" class="story">
+      <div>
+        <span class="eyebrow">OUR STORY</span>
+        <h2>لأن بعض الذكريات<br>تستحق أن تُمسك باليد.</h2>
+      </div>
+      <p>
+        بدأت Memory من فكرة بسيطة: أن تكون طباعة الصور سهلة وقريبة من الناس.
+        نساعدك على تحويل صورك المفضلة من شاشة الجوال إلى صور مطبوعة تحتفظين بها وتشاركينها مع من تحبين.
+      </p>
+    </section>
+
+    <section id="order" class="section order-section">
+      <div class="section-heading">
+        <span class="eyebrow">PRE-ORDER</span>
+        <h2>اطلبي طباعتك</h2>
+        <p>اختاري صورك ثم حددي المقاس وعدد النسخ وطريقة الاستلام. ستظهر لك معاينة وملخص الطلب قبل التأكيد.</p>
+      </div>
+
+      <div class="order-layout">
+        <form id="orderForm" class="order-form">
+          <label>
+            الاسم
+            <input id="customerName" type="text" placeholder="اكتبي اسمك" autocomplete="name">
+          </label>
+
+          <label>
+            رقم التواصل <small>(اختياري)</small>
+            <input id="phone" type="tel" placeholder="05xxxxxxxx" autocomplete="tel">
+          </label>
+
+          <label>
+            مقاس الصور
+            <select id="size">
+              <option value="الكلاسيكية" data-price="10">الصورة الكلاسيكية — 10 ريال</option>
+              <option value="الكبيرة" data-price="15">الصورة الكبيرة — 15 ريال</option>
+              <option value="المميزة" data-price="20">الصورة المميزة — 20 ريال</option>
+            </select>
+          </label>
+
+          <label>
+            عدد النسخ لكل صورة
+            <input id="quantity" type="number" min="1" max="50" value="1" required>
+            <small>مثال: 5 صور × نسختين = 10 صور مطبوعة.</small>
+          </label>
+
+          <label>
+            رفع الصور
+            <input id="photos" type="file" accept="image/*" multiple>
+            <small>يمكنك اختيار أكثر من صورة، وستظهر معاينتها هنا قبل التأكيد.</small><div id="photoStatus" style="margin-top:8px;font-size:12px;color:#8d7159"></div><div id="preview" style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px"></div>
+          </label>
+
+          <label>
+            طريقة الاستلام
+            <select id="delivery">
+              <option>الاستلام من المحل — الجموم</option>
+              <option>التوصيل</option>
+            </select>
+          </label>
+
+          <label id="addressWrap" style="display:none">
+            عنوان التوصيل
+            <input id="address" type="text" placeholder="الحي، الشارع، رقم المبنى">
+          </label>
+
+          <label>
+            ملاحظات (اختياري)
+            <textarea id="notes" rows="4" placeholder="مثلاً: أريد الصور بدون قص..."></textarea>
+          </label>
+
+          <button class="button full" type="submit">إكمال الطلب وإرسال واتساب</button>
+        </form>
+
+        <aside class="summary" id="summary">
+          <span class="eyebrow">ORDER SUMMARY</span>
+          <h3>ملخص الطلب</h3>
+          <div class="summary-row"><span>المقاس</span><strong id="sumSize">الصورة الكلاسيكية — 10 ريال</strong></div>
+          <div class="summary-row"><span>عدد الصور</span><strong id="sumPhotos">0</strong></div><div class="summary-row"><span>النسخ لكل صورة</span><strong id="sumQty">1</strong></div><div class="summary-row"><span>طريقة الاستلام</span><strong id="sumDelivery">الاستلام من المحل — الجموم</strong></div>
+          <div class="summary-row total"><span>الإجمالي</span><strong id="sumTotal">0 ريال</strong></div>
+          <p class="note">السعر محسوب حسب نوع الصورة وعدد النسخ. بعد فتح واتساب أرسلي الصور في المحادثة.</p>
+          <div id="confirmation" class="confirmation" hidden></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div>
+        <span class="eyebrow">CONTACT</span>
+        <h2>خلّينا نحفظها لك.</h2>
+      </div>
+      <div class="contact-details">
+        <p><strong>واتساب</strong><br><a href="https://wa.me/966544742870" target="_blank" rel="noopener"><span>0544742870</span></a></p>
+        <p><strong>الموقع</strong><br><span>الجموم</span></p>
+        <p><strong>ساعات العمل</strong><br><span>يوميًا — 10 ص إلى 10 م</span></p>
+      </div>
+    </section>
+  </main>
+
+  
+<a class="wa-float" href="https://wa.me/966544742870" target="_blank" rel="noopener" aria-label="تواصل معنا عبر واتساب">💬 واتساب</a>
+
+  <div style="text-align:center;padding:10px;font-size:11px;color:#999">Memory • النسخة المحدثة</div>
+  <footer>
+    <span>Memory</span>
+    <span>© 2026 Memory. All rights reserved.</span>
+  </footer>
+
+  <script>
+(function(){
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const size=$('size'), quantity=$('quantity'), photos=$('photos'), delivery=$('delivery');
+  const sumSize=$('sumSize'), sumQty=$('sumQty'), sumPhotos=$('sumPhotos'), sumDelivery=$('sumDelivery'), sumTotal=$('sumTotal');
+  const preview=$('preview'), photoStatus=$('photoStatus'), form=$('orderForm'), confirmation=$('confirmation');
+  const addressWrap=$('addressWrap'), address=$('address');
+
+  function price(){ return Number(size.selectedOptions[0]?.dataset.price || 0); }
+  function count(){ return photos.files ? photos.files.length : 0; }
+  function copies(){ return Math.max(1, Math.min(50, Number(quantity.value || 1))); }
+
+  function update(){
+    const n=count(), q=copies(), p=price(), total=n*q*p;
+    sumSize.textContent=size.selectedOptions[0]?.textContent || '';
+    sumQty.textContent=q;
+    sumPhotos.textContent=n;
+    sumDelivery.textContent=delivery.value;
+    sumTotal.textContent=total.toLocaleString('ar-SA')+' ريال';
+    photoStatus.textContent=n ? ('تم اختيار '+n+' صورة ✓') : 'اختاري صورة واحدة على الأقل لإكمال الطلب.';
+    photoStatus.style.color=n ? '#6f5643' : '#8d7159';
+    addressWrap.style.display = delivery.value.includes('التوصيل') ? 'flex' : 'none';
+  }
+
+  function renderPreview(){
+    preview.innerHTML='';
+    const files=[...photos.files];
+    files.slice(0,20).forEach((file,i)=>{
+      const wrap=document.createElement('div');
+      wrap.style.cssText='position:relative;aspect-ratio:1;overflow:hidden;border:1px solid #e4ddd2;border-radius:6px;background:#eee';
+      const img=document.createElement('img');
+      img.src=URL.createObjectURL(file); img.alt='صورة '+(i+1); img.loading='lazy';
+      img.style.cssText='width:100%;height:100%;object-fit:cover';
+      const badge=document.createElement('span'); badge.textContent=i+1;
+      badge.style.cssText='position:absolute;top:5px;right:5px;background:rgba(38,35,31,.8);color:#fff;border-radius:50%;width:22px;height:22px;display:grid;place-items:center;font-size:11px';
+      wrap.append(img,badge); preview.appendChild(wrap);
+    });
+    update();
+  }
+
+  photos.addEventListener('change', renderPreview);
+  size.addEventListener('change', update);
+  quantity.addEventListener('input', update);
+  delivery.addEventListener('change', update);
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name=$('customerName').value.trim();
+    const phone=$('phone').value.trim();
+    const notes=$('notes').value.trim();
+    const n=count(), q=copies(), p=price(), total=n*q*p;
+
+    if(!name){
+      confirmation.hidden=false;
+      confirmation.innerHTML='<strong>⚠️ اكتبي اسمك أولًا</strong><br>ثم اضغطي «إكمال الطلب وإرسال واتساب».»';
+      $('customerName').focus();
+      confirmation.scrollIntoView({behavior:'smooth',block:'center'}); return;
+    }
+    if(!n){
+      confirmation.hidden=false;
+      confirmation.innerHTML='<strong>📸 اختاري الصور أولًا</strong><br>اضغطي «Choose Files» واختاري صورة واحدة أو أكثر، ثم أعيدي الضغط على زر إكمال الطلب.';
+      photos.focus();
+      confirmation.scrollIntoView({behavior:'smooth',block:'center'}); return;
+    }
+    if(delivery.value.includes('التوصيل') && !address.value.trim()){
+      confirmation.hidden=false;
+      confirmation.innerHTML='<strong>📍 اكتبي عنوان التوصيل</strong><br>نحتاج العنوان لإكمال الطلب.';
+      address.focus();
+      confirmation.scrollIntoView({behavior:'smooth',block:'center'}); return;
+    }
+
+    const orderNo='MEM-'+Date.now().toString().slice(-6);
+    const lines=[
+      'مرحبًا Memory 👋','أريد طلب طباعة صور.','',
+      '🔖 رقم الطلب: '+orderNo,
+      '👤 الاسم: '+name,
+      phone?'📱 رقم التواصل: '+phone:'📱 التواصل: عبر واتساب',
+      '🖼️ النوع: '+size.value,
+      '💵 سعر الصورة: '+p+' ريال',
+      '📷 عدد الصور: '+n,
+      '🔢 النسخ لكل صورة: '+q,
+      '🧾 إجمالي الصور المطبوعة: '+(n*q),
+      '🚚 الاستلام: '+delivery.value,
+      delivery.value.includes('التوصيل')?'📍 العنوان: '+address.value.trim():'',
+      '💰 الإجمالي: '+total+' ريال',
+      notes?'📝 ملاحظات: '+notes:'',
+      '','سأرسل الصور في هذه المحادثة بعد فتح واتساب. شكرًا 🌷'
+    ].filter(Boolean).join('\n');
+
+    const url='https://wa.me/966544742870?text='+encodeURIComponent(lines);
+    confirmation.hidden=false;
+    confirmation.innerHTML='<strong>تم تجهيز طلبك ✨</strong><br>رقم الطلب: <strong>'+orderNo+'</strong><br>الإجمالي: <strong>'+total.toLocaleString('ar-SA')+' ريال</strong><br><small>بعد فتح واتساب، أرسلي الصور في نفس المحادثة.</small><br><br><a class="button full" href="'+url+'" target="_blank" rel="noopener noreferrer">فتح واتساب وإرسال الطلب</a>';
+    confirmation.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  update();
+})();
+</script>
+<noscript><div style="position:fixed;inset:0;background:#fffdf9;z-index:9999;padding:30px;font-family:Cairo,sans-serif;text-align:center;direction:rtl"><h2>لتشغيل الطلب، يرجى فتح الموقع في Safari أو Chrome</h2><p>هذا الموقع يحتاج JavaScript لحساب السعر وتجهيز طلب واتساب.</p></div></noscript>
+</body>
+</html>
